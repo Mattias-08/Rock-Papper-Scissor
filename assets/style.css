@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     background-color: orange;
     font-weight: bold;
+    margin-top: 10vh;
 }
 
 .score-container,
@@ -31,7 +32,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin: 1rem 0;
     padding: 5%;
 }
@@ -43,7 +43,6 @@ body {
     background-color: #ddd;
     color: black;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     margin: 1rem 3rem;
@@ -58,7 +57,7 @@ body {
 .action-button {
     font-size: 1.5rem;
     padding: 1rem 2rem;
-    margin: 2rem 0;
+    margin: 2rem;
     background-color: #333;
     color: white;
     border: none;
