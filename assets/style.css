@@ -69,3 +69,7 @@ body {
 .result-text {
     font-size: 4rem;
 }
+
+.hide {
+    display: none;
+}

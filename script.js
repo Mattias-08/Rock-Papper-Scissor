@@ -2,17 +2,33 @@ const choices = ["rock", "paper", "scissors"];
 const resultDisplay = document.getElementById("resultDisplay");
 const actionButton = document.querySelector('.action-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
-
+console.log(choiceButtons)
+const buttonContainer = document.querySelector('.button-container')
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    actionButton.addEventListener('click', () => {
+        /* choiceButtons.forEach(button => button.classList.remove('disabled'));
+        choiceButtons.forEach(button => button.classList.remove('active'));*/
+        buttonContainer.classList.remove('hide')
+        actionButton.classList.add('hide')
+    })
 
-/* didnt understand selection function like:
-actionButton.addEventListener('click', () => {
-  choiceButtons.forEach(button => button.classList.remove('disabled'));
-  choiceButtons.forEach(button => button.classList.remove('active'));*/
+    choiceButtons.forEach((buttonToClick) => {
+        console.log('TestButton', buttonToClick)
+        buttonToClick.addEventListener('click', () => {
+            let currentChoice = buttonToCLick.getAttribute('data-choice')
+            console.log(currentChoice)
+        })
+    })
+})
 
-function getPlayerChoice() {
+
+
+
+
+/*function getPlayerChoice() {
     const choiceButtons = document.querySelectorAll('.choice-button');
 
     for (const button of choiceButtons) {
@@ -22,7 +38,7 @@ function getPlayerChoice() {
     }
 
     return null;
-}
+}*/
 
 function getComputerChoice() {
 
