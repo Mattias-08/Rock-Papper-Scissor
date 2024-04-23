@@ -1,0 +1,68 @@
+/* General Styles */
+body {
+    background-color: grey;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    background-color: #eee;
+    padding: 2rem;
+    flex-direction: column;
+    background-color: orange;
+    font-weight: bold;
+}
+
+.score-container,
+.button-container {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.counter {
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 5%;
+}
+
+.choice-button,
+.action-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #ddd;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    margin: 1rem 3rem;
+}
+
+.choice-button:hover,
+.action-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
+}
+
+.action-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
