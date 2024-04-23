@@ -1,13 +1,13 @@
 /* General Styles */
 body {
-    background-color: grey;
+    background-color: #ffffd0;
 }
 
 .game-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 90vw;
     background-color: #eee;
     padding: 2rem;
     flex-direction: column;
