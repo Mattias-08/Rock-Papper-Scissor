@@ -65,3 +65,7 @@ body {
     cursor: pointer;
     flex: 1;
 }
+
+.result-text {
+    font-size: 4rem;
+}

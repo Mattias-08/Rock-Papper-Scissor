@@ -10,6 +10,7 @@
     <meta name="keywords" content="game, rock-papper-scicssor, competion">
     <meta name="author" content="Mattias Jörntell">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="script.js" defer></script>
     <!-- Title -->
     <title>Rock Papper Scissors</title>
 </head>
@@ -30,10 +31,11 @@
             <div class="counter results">Results: <span id="results-count">0-0</span></div>
         </div>
         <div class="button-container">
-            <button class="choice-button">✊ Rock</button>
-            <button class="choice-button">✋Paper</button>
-            <button class="choice-button">✌️ Scissors</button>
+            <button oncklick="playGame('rock')" class="choice-button">✊ Rock</button>
+            <button oncklick="playGame('paper')" class="choice-button">✋Paper</button>
+            <button oncklick="playGame('scissors')" class="choice-button">✌️ Scissors</button>
         </div>
         <button class="action-button">Make Your Choice</button>
+        <div class="result-text">display winner</div>
     </section>
 </body>
