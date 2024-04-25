@@ -69,6 +69,8 @@ function updateResultDisplay(winner) {
     const resultDisplay = document.getElementById("winner-text");
     resultDisplay.textContent = message;
     round++;
+    const roundsCount = document.getElementById("rounds-count");
     roundsCount.textContent = round;
+    const resultsCount = document.getElementById("results-count");
     resultsCount.textContent = `${playerScore}-${computerScore}`;
 }
