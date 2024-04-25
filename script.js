@@ -7,44 +7,38 @@ const buttonContainer = document.querySelector('.button-container')
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+
 document.addEventListener('DOMContentLoaded', function () {
     actionButton.addEventListener('click', () => {
-        /* choiceButtons.forEach(button => button.classList.remove('disabled'));
-        choiceButtons.forEach(button => button.classList.remove('active'));*/
         buttonContainer.classList.remove('hide')
         actionButton.classList.add('hide')
     })
 
     choiceButtons.forEach((buttonToClick) => {
-        console.log('TestButton', buttonToClick)
         buttonToClick.addEventListener('click', () => {
-            let currentChoice = buttonToCLick.getAttribute('data-choice')
-            console.log(currentChoice)
-        })
-    })
-})
+            const clickedButton = event.target;
+            const playerChoice = clickedButton.dataset.choice;
 
+            if (playerChoice) {
+                console.log("Player Choice:", playerChoice);
+                // Use playerChoice in your game logic
+                const computerChoice = getComputerChoice();
+                const winner = determineWinner(playerChoice, computerChoice);
+                updateResultDisplay(winner);
+            } else {
+                console.log("Invalid choice");
+            }
+        });
+    });
+});
 
-
-
-
-/*function getPlayerChoice() {
-    const choiceButtons = document.querySelectorAll('.choice-button');
-
-    for (const button of choiceButtons) {
-        if (button.classList.contains('active')) {
-            return button.dataset.choice;
-        }
-    }
-
-    return null;
-}*/
 
 function getComputerChoice() {
 
     /*generate random nr 0-2 to match the amount of available results*/
     const randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
+
 }
 
 function determineWinner(playerChoice, computerChoice) {
@@ -72,6 +66,7 @@ function updateResultDisplay(winner) {
         computerScore++;
     }
 
+    const resultDisplay = document.getElementById("winner-text");
     resultDisplay.textContent = message;
     round++;
     roundsCount.textContent = round;
