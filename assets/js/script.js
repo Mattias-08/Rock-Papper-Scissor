@@ -1,11 +1,24 @@
+/**
+ * choices is an array of all the possible choices in the game
+ * resultDisplay retrieves the HTML element with ID winner text
+ * actionButtonretrieves the HTML element with
+ * choiceButtons retrieves the HTML element with
+ * resultDisplay retrieves the HTML element with
+ * resultDisplay retrieves the HTML element with
+ * resultDisplay retrieves the HTML element with
+ * resultDisplay retrieves the HTML element with
+ * resultDisplay retrieves the HTML element with
+ */
+
 const choices = ["rock", "paper", "scissors"];
-const resultDisplay = document.getElementById("resultDisplay");
+const resultDisplay = document.getElementById("winner-text");
 const actionButton = document.querySelector('.action-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
-console.log(choiceButtons)
 const buttonContainer = document.querySelector('.button-container')
 const resetButton = document.querySelector('.reset-button');
-
+const roundsCount = document.getElementById("rounds-count");
+const resultsCount = document.getElementById("results-count");
+// these variables tracks the players and computers score and shows which round it is
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
@@ -23,13 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const playerChoice = clickedButton.dataset.choice;
 
             if (playerChoice) {
-                console.log("Player Choice:", playerChoice);
-                // Use playerChoice in your game logic
                 const computerChoice = getComputerChoice();
                 const winner = determineWinner(playerChoice, computerChoice);
                 updateResultDisplay(winner);
-            } else {
-                console.log("Invalid choice");
             }
         });
     });
@@ -44,7 +53,11 @@ function getComputerChoice() {
     return choices[randomIndex];
 
 }
-
+/**
+ * this functions recieves playerchoice and computer choice to calculate the whe winner
+ *  if they have the same symbol then the result is tie otherways there is 3 else if statements that handle different player choices and 
+ *  what computer choices they win or lose too. 
+ */
 function determineWinner(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return 'tie';
@@ -55,7 +68,9 @@ function determineWinner(playerChoice, computerChoice) {
     } else if (playerChoice === 'scissors') {
         return computerChoice === 'paper' ? 'player' : 'computer';
     }
-
+    /**
+     * updateResultDisplay 
+     */
 }
 
 function updateResultDisplay(winner) {
@@ -70,18 +85,13 @@ function updateResultDisplay(winner) {
         computerScore++;
     }
 
-    const resultDisplay = document.getElementById("winner-text");
     resultDisplay.textContent = message;
     round++;
-    const roundsCount = document.getElementById("rounds-count");
     roundsCount.textContent = round;
-    const resultsCount = document.getElementById("results-count");
     resultsCount.textContent = `${playerScore}-${computerScore}`;
-    const resetButton = document.querySelector('.reset-button');
-    resetButton.classList.remove('hide');
-
 
     if (round === 5) {
+        resetButton.classList.remove('hide');
         const choiceButtons = document.querySelectorAll('.choice-button');
         choiceButtons.forEach(button => button.disabled = true); // Disable buttons
         // Determine winner based on score
@@ -103,9 +113,10 @@ function resetGame() {
     computerScore = 0;
     round = 0;
 
-    const resultDisplay = document.getElementById("resultDisplay");
     resultDisplay.textContent = "";
-    buttonContainer.classList.add('hide');
+    roundsCount.innerHTML = '0';
+    resultsCount.textContent = `${playerScore}-${computerScore}`;
+    actionButton.classList.remove('hide');
     choiceButtons.forEach(button => button.disabled = false);
     resetButton.classList.add('hide');
 }
