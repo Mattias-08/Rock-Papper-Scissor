@@ -78,23 +78,34 @@ function updateResultDisplay(winner) {
     const resetButton = document.querySelector('.reset-button');
     resetButton.classList.remove('hide');
 
-    if (playerScore == 3) {
 
+    if (round === 5) {
+        const choiceButtons = document.querySelectorAll('.choice-button');
+        choiceButtons.forEach(button => button.disabled = true); // Disable buttons
+        // Determine winner based on score
+        let winnerMessage;
+        if (playerScore > computerScore) {
+            winnerMessage = "Game over, You Won!";
+        } else if (playerScore < computerScore) {
+            winnerMessage = "Game over, The computer wins.";
+        } else {
+            winnerMessage = "Game over, It's a tie!";
+        }
+
+        resultDisplay.textContent = winnerMessage;
     }
 }
+/*        function resetGame() {
+            // Reset game variables
+            playerScore = 0;
+            computerScore = 0;
+            round = 0;
 
-function resetGame() {
-    // Reset game variables
-    playerScore = 0;
-    computerScore = 0;
-    round = 0;
+            resultDisplay.textContent = ""; // Clear winner text
+            buttonContainer.classList.add('hide'); // Hide choice buttons
 
-    // Reset UI elements dynamically (no page reload)
-    resultDisplay.textContent = ""; // Clear winner text
-    buttonContainer.classList.add('hide'); // Hide choice buttons
-
-    // Make sure the "New Game" button is hidden again (optional)
-    resetButton.classList.add('hide');
-}
-// Event listener for the "New Game" button
-resetButton.addEventListener('click', resetGame);
+            // Make sure the "New Game" button is hidden again (optional)
+            resetButton.classList.add('hide');
+        }
+        // Event listener for the "New Game" button
+        resetButton.addEventListener('click', resetGame); */
