@@ -66,6 +66,23 @@ body {
     flex: 1;
 }
 
+.reset-button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    margin: 1rem 0.5rem;
+    border-radius: 5px;
+}
+
+.reset-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
+}
+
 .result-text {
     font-size: 4rem;
 }

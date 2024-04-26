@@ -4,9 +4,11 @@ const actionButton = document.querySelector('.action-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
 console.log(choiceButtons)
 const buttonContainer = document.querySelector('.button-container')
+const resetButton = document.querySelector('.reset-button');
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
+
 
 document.addEventListener('DOMContentLoaded', function () {
     actionButton.addEventListener('click', () => {
@@ -73,4 +75,26 @@ function updateResultDisplay(winner) {
     roundsCount.textContent = round;
     const resultsCount = document.getElementById("results-count");
     resultsCount.textContent = `${playerScore}-${computerScore}`;
+    const resetButton = document.querySelector('.reset-button');
+    resetButton.classList.remove('hide');
+
+    if (playerScore == 3) {
+
+    }
 }
+
+function resetGame() {
+    // Reset game variables
+    playerScore = 0;
+    computerScore = 0;
+    round = 0;
+
+    // Reset UI elements dynamically (no page reload)
+    resultDisplay.textContent = ""; // Clear winner text
+    buttonContainer.classList.add('hide'); // Hide choice buttons
+
+    // Make sure the "New Game" button is hidden again (optional)
+    resetButton.classList.add('hide');
+}
+// Event listener for the "New Game" button
+resetButton.addEventListener('click', resetGame);
