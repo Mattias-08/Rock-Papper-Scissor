@@ -5,6 +5,7 @@ const choiceButtons = document.querySelectorAll('.choice-button');
 console.log(choiceButtons)
 const buttonContainer = document.querySelector('.button-container')
 const resetButton = document.querySelector('.reset-button');
+
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    resetButton.addEventListener('click', resetGame);
 });
 
 
@@ -95,17 +97,15 @@ function updateResultDisplay(winner) {
         resultDisplay.textContent = winnerMessage;
     }
 }
-/*        function resetGame() {
-            // Reset game variables
-            playerScore = 0;
-            computerScore = 0;
-            round = 0;
 
-            resultDisplay.textContent = ""; // Clear winner text
-            buttonContainer.classList.add('hide'); // Hide choice buttons
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    round = 0;
 
-            // Make sure the "New Game" button is hidden again (optional)
-            resetButton.classList.add('hide');
-        }
-        // Event listener for the "New Game" button
-        resetButton.addEventListener('click', resetGame); */
+    const resultDisplay = document.getElementById("resultDisplay");
+    resultDisplay.textContent = "";
+    buttonContainer.classList.add('hide');
+    choiceButtons.forEach(button => button.disabled = false);
+    resetButton.classList.add('hide');
+}
