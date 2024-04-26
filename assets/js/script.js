@@ -101,7 +101,7 @@ function updateResultDisplay(winner) {
     resultDisplay.textContent = message;
     round++;
     roundsCount.textContent = round;
-    resultsCount.textContent = `${playerScore}-${computerScore}`;
+    resultsCount.textContent = `Player: ${playerScore} - Computer:${computerScore}`;
 
     if (round === 5) {
         resetButton.classList.remove('hide');
@@ -127,8 +127,7 @@ function resetGame() {
 
     resultDisplay.textContent = "";
     roundsCount.innerHTML = '0';
-    resultsCount.textContent = `${playerScore}-${computerScore}`;
-    actionButton.classList.remove('hide');
+    resultsCount.textContent = `Player: ${playerScore} - Computer:${computerScore}`;
     choiceButtons.forEach(button => button.disabled = false);
     resetButton.classList.add('hide');
 }

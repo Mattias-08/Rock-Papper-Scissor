@@ -90,3 +90,10 @@ body {
 .hide {
     display: none;
 }
+
+.choice-display {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #ddd;
+    color: black;
+}
