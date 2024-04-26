@@ -1,13 +1,7 @@
 /**
  * choices is an array of all the possible choices in the game
- * resultDisplay retrieves the HTML element with ID winner text
- * actionButtonretrieves the HTML element with
- * choiceButtons retrieves the HTML element with
- * resultDisplay retrieves the HTML element with
- * resultDisplay retrieves the HTML element with
- * resultDisplay retrieves the HTML element with
- * resultDisplay retrieves the HTML element with
- * resultDisplay retrieves the HTML element with
+ * resultDisplay and the others const retrieves IDs or classes with the name displayed
+ * inside their  parentheses 
  */
 
 const choices = ["rock", "paper", "scissors"];
@@ -23,18 +17,31 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 
-
+/**
+ * this event listener waits for the HTML content to be loaded and then sets up
+ * event listeners, firstly the button  that starts the game which shows the
+ * choice buttons and hides itself
+ */
 document.addEventListener('DOMContentLoaded', function () {
     actionButton.addEventListener('click', () => {
         buttonContainer.classList.remove('hide')
         actionButton.classList.add('hide')
     })
-
+    /**
+     * gets a reference to the clicked buttons using event target uses a lokal
+     * variable player choice to extract the players choice
+     */
     choiceButtons.forEach((buttonToClick) => {
         buttonToClick.addEventListener('click', () => {
             const clickedButton = event.target;
             const playerChoice = clickedButton.dataset.choice;
-
+            /**
+             * then if  there is a player choice recieve the computers choice from
+             * the getComputerChoice and put it inside a variable, after that 
+             * get the value of winner by calling the determineWinner function who recieves 
+             * the players and computers choices.
+             * calls the updateResultDisplay and gives it the value of winner, also includes the reset button
+             */
             if (playerChoice) {
                 const computerChoice = getComputerChoice();
                 const winner = determineWinner(playerChoice, computerChoice);
@@ -45,17 +52,16 @@ document.addEventListener('DOMContentLoaded', function () {
     resetButton.addEventListener('click', resetGame);
 });
 
-
+// gives ranomdInex a randomnumber betwin 0-1 and that gets muliplied by 3 and rounded to end up with a value betwin 0-2
 function getComputerChoice() {
-
-    /*generate random nr 0-2 to match the amount of available results*/
     const randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 
 }
+
 /**
  * this functions recieves playerchoice and computer choice to calculate the whe winner
- *  if they have the same symbol then the result is tie otherways there is 3 else if statements that handle different player choices and 
+ *  if they have the same symbol then the result is tie, otherways there is three else if statements that handle different player choices and 
  *  what computer choices they win or lose too. 
  */
 function determineWinner(playerChoice, computerChoice) {
@@ -68,8 +74,10 @@ function determineWinner(playerChoice, computerChoice) {
     } else if (playerChoice === 'scissors') {
         return computerChoice === 'paper' ? 'player' : 'computer';
     }
+
     /**
-     * updateResultDisplay 
+     * updateResultDisplay has a lokal variable message and uses a if else statmenent to see which
+     * message winner is identical too. It also adds to the score of the winner
      */
 }
 
@@ -84,7 +92,12 @@ function updateResultDisplay(winner) {
         message = "The computer wins.";
         computerScore++;
     }
-
+    /**
+     * after that it shows a winenr message, updates the roundcount, its text and the resultcountmessage
+     * after that follows an if statement that triggers when the round is exactly 5, it then reveals the new game button
+     * and disables the choice buttons for rock, pappers and scisssors. Then it creates a lokal variable with a if-else function 
+     * to give an fitting message depending on who won.
+     */
     resultDisplay.textContent = message;
     round++;
     roundsCount.textContent = round;
@@ -92,7 +105,6 @@ function updateResultDisplay(winner) {
 
     if (round === 5) {
         resetButton.classList.remove('hide');
-        const choiceButtons = document.querySelectorAll('.choice-button');
         choiceButtons.forEach(button => button.disabled = true); // Disable buttons
         // Determine winner based on score
         let winnerMessage;
