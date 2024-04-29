@@ -3,7 +3,6 @@
  * resultDisplay and the others const retrieves IDs or classes with the name displayed
  * inside their  parentheses 
  */
-
 const choices = ["rock", "paper", "scissors"];
 const resultDisplay = document.getElementById("winner-text");
 const actionButton = document.querySelector('.action-button');
@@ -15,7 +14,7 @@ const resultsCount = document.getElementById("results-count");
 // these variables tracks the players and computers score and shows which round it is
 let playerScore = 0;
 let computerScore = 0;
-let round = 0;
+let round = 1;
 
 /**
  * this event listener waits for the HTML content to be loaded and then sets up
@@ -101,9 +100,9 @@ function updateResultDisplay(winner) {
     resultDisplay.textContent = message;
     round++;
     roundsCount.textContent = round;
-    resultsCount.textContent = `Player: ${playerScore} - Computer:${computerScore}`;
+    resultsCount.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 
-    if (round === 5) {
+    if (round === 6) {
         resetButton.classList.remove('hide');
         choiceButtons.forEach(button => button.disabled = true); // Disable buttons
         // Determine winner based on score
@@ -115,19 +114,20 @@ function updateResultDisplay(winner) {
         } else {
             winnerMessage = "Game over, It's a tie!";
         }
-
         resultDisplay.textContent = winnerMessage;
     }
 }
-
+/**
+ * Function to reset all the variables and textcontent for a new round
+ * and hiding the reset button untill a new game is started.
+ *   */
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
-    round = 0;
-
+    round = 1;
     resultDisplay.textContent = "";
-    roundsCount.innerHTML = '0';
-    resultsCount.textContent = `Player: ${playerScore} - Computer:${computerScore}`;
+    roundsCount.innerHTML = round;
+    resultsCount.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
     choiceButtons.forEach(button => button.disabled = false);
     resetButton.classList.add('hide');
 }
