@@ -11,6 +11,8 @@ const buttonContainer = document.querySelector('.button-container');
 const resetButton = document.querySelector('.reset-button');
 const roundsCount = document.getElementById("rounds-count");
 const resultsCount = document.getElementById("results-count");
+let computerChoiceDisplay = document.querySelector('.choice-display');
+let computerChoice;
 // these variables tracks the players and computers score and shows which round it is
 let playerScore = 0;
 let computerScore = 0;
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
              * calls the updateResultDisplay and gives it the value of winner, also includes the reset button
              */
             if (playerChoice) {
-                const computerChoice = getComputerChoice();
+                computerChoice = getComputerChoice();
                 const winner = determineWinner(playerChoice, computerChoice);
                 updateResultDisplay(winner);
             }
@@ -92,7 +94,7 @@ function updateResultDisplay(winner) {
         computerScore++;
     }
     /**
-     * after that it shows a winenr message, updates the roundcount, its text and the resultcountmessage
+     * after that it shows a winner message, updates the roundcount, its text and the resultcountmessage
      * after that follows an if statement that triggers when the round is exactly 5, it then reveals the new game button
      * and disables the choice buttons for rock, pappers and scisssors. Then it creates a lokal variable with a if-else function 
      * to give an fitting message depending on who won.
@@ -101,8 +103,13 @@ function updateResultDisplay(winner) {
     round++;
     roundsCount.textContent = round;
     resultsCount.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
+    computerChoiceDisplay.textContent = "";
+    computerChoiceDisplay = computerChoice; /// want it to display computer choice
+
 
     if (round === 6) {
+        // In order to display the round as 5 at the end even if round started at 1
+        roundsCount.textContent = "5";
         resetButton.classList.remove('hide');
         choiceButtons.forEach(button => button.disabled = true); // Disable buttons
         // Determine winner based on score
