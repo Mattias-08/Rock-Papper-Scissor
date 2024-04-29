@@ -1,12 +1,16 @@
 /* General Styles */
 body {
+    /* Set background color of the webpage */
     background-color: #ffffd0;
 }
 
+/* Main Game Container Styles */
 .game-container {
+    /* Center elements horizontally and vertically */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Set width, padding, and background color */
     width: 80%;
     padding: 2rem;
     flex-direction: column;
@@ -15,20 +19,24 @@ body {
     margin: 5vh auto;
 }
 
+/* Shared Styles for Score and Button Containers */
 .score-container,
 .button-container {
+    /* Allocate equal space within parent container  and arrange elemets position and stretch*/
     flex: 1;
     display: flex;
     align-items: stretch;
     justify-content: space-between;
 }
 
+/* Styles for Score Counter */
 .counter {
     font-size: 1.2rem;
     margin-right: 2rem;
     align-items: stretch;
 }
 
+/* Styles for Generic Row Layout */
 .row {
     display: flex;
     justify-content: space-between;
@@ -37,6 +45,8 @@ body {
     padding: 5%;
 }
 
+/* Shared Styles for Choice and Action Buttons including scalable size colour and 
+transition effects and space betwin elements*/
 .choice-button,
 .action-button {
     font-size: 1.6vw;
@@ -50,12 +60,14 @@ body {
     flex: 1;
 }
 
+/* Styles for hover effect on choice and action buttons */
 .choice-button:hover,
 .action-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.4);
 }
 
+/* Specific Styles for Action Buttons */
 .action-button {
     font-size: 1.6vw;
     padding: 1rem 2rem;
@@ -68,6 +80,7 @@ body {
     flex: 1;
 }
 
+/* Styles for Reset Button  includes colour, transitions effects and size*/
 .reset-button {
     font-size: 1.2rem;
     padding: 0.7rem 1.5rem;
@@ -89,6 +102,7 @@ body {
     font-size: 3vw;
 }
 
+/*hide class for elements that should be hidden */
 .hide {
     display: none;
 }

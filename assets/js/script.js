@@ -7,7 +7,7 @@ const choices = ["rock", "paper", "scissors"];
 const resultDisplay = document.getElementById("winner-text");
 const actionButton = document.querySelector('.action-button');
 const choiceButtons = document.querySelectorAll('.choice-button');
-const buttonContainer = document.querySelector('.button-container')
+const buttonContainer = document.querySelector('.button-container');
 const resetButton = document.querySelector('.reset-button');
 const roundsCount = document.getElementById("rounds-count");
 const resultsCount = document.getElementById("results-count");
@@ -23,9 +23,9 @@ let round = 1;
  */
 document.addEventListener('DOMContentLoaded', function () {
     actionButton.addEventListener('click', () => {
-        buttonContainer.classList.remove('hide')
-        actionButton.classList.add('hide')
-    })
+        buttonContainer.classList.remove('hide');
+        actionButton.classList.add('hide');
+    });
     /**
      * gets a reference to the clicked buttons using event target uses a lokal
      * variable player choice to extract the players choice
