@@ -11,8 +11,7 @@ const buttonContainer = document.querySelector('.button-container');
 const resetButton = document.querySelector('.reset-button');
 const roundsCount = document.getElementById("rounds-count");
 const resultsCount = document.getElementById("results-count");
-let computerChoiceDisplay = document.querySelector('.choice-display');
-let computerChoice;
+const computerChoiceDisplay = document.getElementById('choice-display');
 // these variables tracks the players and computers score and shows which round it is
 let playerScore = 0;
 let computerScore = 0;
@@ -47,6 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 computerChoice = getComputerChoice();
                 const winner = determineWinner(playerChoice, computerChoice);
                 updateResultDisplay(winner);
+                let emoji;
+                if (computerChoice === "rock") {
+                    emoji = "✊"; // Rock emoji
+                } else if (computerChoice === "paper") {
+                    emoji = "✋"; // Paper emoji
+                } else {
+                    emoji = "✌️"; // Scissors emoji
+                }
+                computerChoiceDisplay.textContent = `Computer picked: ${emoji} ${computerChoice}`;
             }
         });
     });
@@ -103,8 +111,7 @@ function updateResultDisplay(winner) {
     round++;
     roundsCount.textContent = round;
     resultsCount.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
-    computerChoiceDisplay.textContent = "";
-    computerChoiceDisplay = computerChoice; /// want it to display computer choice
+
 
 
     if (round === 6) {
