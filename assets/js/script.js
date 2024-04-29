@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonToClick.addEventListener('click', () => {
             const clickedButton = event.target;
             const playerChoice = clickedButton.dataset.choice;
+
             /**
              * then if  there is a player choice recieve the computers choice from
              * the getComputerChoice and put it inside a variable, after that 
@@ -145,5 +146,6 @@ function resetGame() {
     choiceButtons.forEach(button => button.disabled = false);
     resetButton.classList.add('hide');
     computerChoiceDisplay.textContent = "";
+    computerChoiceDisplay.textContent = '✊✋✌️';
 
 }

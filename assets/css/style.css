@@ -82,8 +82,8 @@ transition effects and space betwin elements*/
 
 /* Styles for Reset Button  includes colour, transitions effects and size*/
 .reset-button {
-    font-size: 1.2rem;
-    padding: 0.7rem 1.5rem;
+    font-size: 3vw;
+    padding: 1rem 2rem;
     background-color: #388e3c;
     color: white;
     border: none;
@@ -112,5 +112,6 @@ transition effects and space betwin elements*/
     padding: 1rem 2rem;
     background-color: #ddd;
     color: black;
+    margin: 2vh;
 
 }
