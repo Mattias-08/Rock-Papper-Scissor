@@ -1,110 +1,170 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# *Rock Papper Scissors*
+This website allows a simple yet fun experience of some oldfashioned Rock Papper Scissors with a best of 5 competition against the computer too finally find out who's the smartest!
 
-Welcome Mattias-08 Jörntell,
+The site can be accessable by this [link](https://mattias-08.github.io/Project1finally/index.html)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Responsive Mockup](docs/screen_display.png)
 
 ---
 
-Happy coding!
+## Features
+
++ ### Navbar
+
++ ##### Navigation
+    - Positioned at the top of the page.
+    - Contains navigation links on the right side:
+        * HOME - leads to the home page where users can learn about the Domkyrkan and its history.
+        * About Domkyrkan - leads to an information page displaying a summery of Domkyrkans history.
+        * CONTACT - leads to the contact form page where users can give the company input.
+    - The links have animated hover effect.
+    - The navigation is easy to understand and simple.
+    ![image navbar](docs/navbar_fullscreen.png)
+
+
+
+        * On mobile devices: 
+            - navigation bar has an X meny implemented on the left side.
+            ![NavBar Mobile Closed](docs/navbar_mobile_closed.png)
+        
+            - When the X menu is clicked, the dropdown menu falls down with the links in the same order.
+            ![NavBar Mobile Open](docs/navbar_mobile_open.png)
+
++ ### Home Page
+
+    - The homepage:
+
+        * How grand and beatiful the church is.
+        * An introduktions to the churchs rich history.
+        * Shows a front image of the church.
+
+    ![Home Page](docs/domkyrka_homepage.png)
+
+---
+
++ #### About Domkyrkan
+
+    - About contents three sections desricbing the myth, history and present of the church:
+
+        * They each contain an image centered around the specific section.
+        * Short description of each section.
+
+    ![About page](docs/image_about_domkyrkan.png)
+
+--- 
+
++ ### Contact page
+
+    - Contact page has a contact form:
+
+        - All text input fields are customized.
+        - All the labels have some form of animation so you cant leave them empty.
+        - The submit button leads to the response page.
+​
+    ![Contact page](docs/image_contact.png)
+
+
+---
++ ### Response page
+
+    - Response page that appers after contact us have been filled in.
+    - It contains the thank you message and a promise to reach back.
+
+    ![Response page](docs/image_thankyou_page.png)
+
+---
++ #### Footer
+
+    - Footer contains social media links that open in a new tab.
+​
+    ![Footer](docs/footer.png)
+​
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items simmetrically on the pages.
+- [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - was used to make "gallery" and "contact" pages responsive. 
+- [Git](https://git-scm.com/) was used for the version control of the website.
+- [GitHub](https://github.com/) was used to host the code of the website.
+- [GIMP](https://www.gimp.org/) was used to make and resize images for the README file.
+
+---
+
+## Design
+
+### Color Scheme
+
+![Color pallet](docs/colour_pallete.png)
+
+- Brown was used for the header for a medival theme.
+
+- A light white colour was used for the sections to make them stand out and not conlflict against the dropdown-menu.
+
+- White was used for the footer to make it stand outs
+
+- The rest of the colours where used for smaller elements to make them look good.
+
+
+
+
+
+### Typography
+
+![Main Font](docs/Font.png)
+
+- Merriweather was used to give a medival fealing.
+
+---
+
+## Testing
+
+Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
+
+---
+
+## Deployment
+
+### Deployment to GitHub Pages
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the [GitHub repository](https://github.com/Mattias-08/Project1finally), navigate to the Settings tab 
+  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
+  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found [here](https://github.com/Mattias-08/Project1finally)
+
+### Local Deployment
+
+In order to make a local copy of this project, you can clone it.
+In your IDE Terminal, type the following command to clone my repository:
+
+- `git clone https://github.com/Mattias-08/Project1finally.git`
+
+- Alternatively, if you use Gitpod, you can [click here](https://mattias08-project1final-rjatp002dgm.ws-eu110.gitpod.io/), which will start the Gitpod workspace for you.
+
+---
+
+## Credits
+
++ #### Media
+
+    - The images where all taken from different websites since i wanted specific images that are hard to find.
+
+    +Header image: 
+
+    [1st image](https://byggteknikforlaget.se/lunds-domkyrka-analyseras-med-ny-teknik/)
+    
+    +Section images:
+
+    [1st image](https://mythus.fandom.com/wiki/Troll)
+    
+    [2nd image](https://visitskane.com/sv/classic-attractions/lunds-domkyrka)
+
+    [3rd image](https://www.nyaprojekt.se/2022/11/22/historiskt-med-ny-arsring-till-lunds-domkyrka-nar-torntaken-renoveras/)
+
+
++ #### Acknowledgments
+
+- [Code Institute](https://codeinstitute.net/) tutors and Slack community members for their support and help.
+- [Juliia Konn](https://github.com/IuliiaKonovalova) My mentor why helped my alot.
