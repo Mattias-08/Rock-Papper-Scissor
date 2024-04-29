@@ -49,7 +49,7 @@ body {
 transition effects and space betwin elements*/
 .choice-button,
 .action-button {
-    font-size: 1.6vw;
+    font-size: 3vw;
     padding: 1rem 2rem;
     background-color: #ddd;
     color: black;
@@ -108,8 +108,9 @@ transition effects and space betwin elements*/
 }
 
 .choice-display {
-    font-size: 1.6vw;
+    font-size: 3vw;
     padding: 1rem 2rem;
     background-color: #ddd;
     color: black;
+
 }

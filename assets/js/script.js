@@ -144,4 +144,6 @@ function resetGame() {
     resultsCount.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
     choiceButtons.forEach(button => button.disabled = false);
     resetButton.classList.add('hide');
+    computerChoiceDisplay.textContent = "";
+
 }
