@@ -4,7 +4,6 @@ This website allows a simple yet fun experience of some oldfashioned Rock Papper
 The site can be accessable by this [link](https://mattias-08.github.io/Rock-Papper-Scissor/)
 
 
-
 ![Responsive Mockup](documentation/game_responsive_mockup.png)
 
 ---
@@ -31,7 +30,12 @@ The site can be accessable by this [link](https://mattias-08.github.io/Rock-Papp
 
     ![image navbar](documentation/game_finished.png)
 
-​
+## Rules
+    - The game is pretty simple the player and computer both starts at 0 points and its the first round
+    -There is 5 rounds in total and the game ends after all the rounds are finished
+    -The winner of each round gets a point unless there is a tie then no one gets a point
+    -The rounds gets compared at the end of the game and the player with most points win, if the score is even then the game ends with a tie
+
 ## Technologies Used
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
@@ -57,13 +61,7 @@ The site can be accessable by this [link](https://mattias-08.github.io/Rock-Papp
 
 - Green was used for the new game button since its such a classic colour for games.
 
-
-
-
-
 ### Typography
-
-
 - No particalar font was added 
 
 ---
