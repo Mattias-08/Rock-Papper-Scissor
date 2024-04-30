@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
              * calls the updateResultDisplay and gives it the value of winner, also includes the reset button
              */
             if (playerChoice) {
-                computerChoice = getComputerChoice();
+                let computerChoice = getComputerChoice();
                 const winner = determineWinner(playerChoice, computerChoice);
                 updateResultDisplay(winner);
                 let emoji;
